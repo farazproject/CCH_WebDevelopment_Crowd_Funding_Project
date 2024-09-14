@@ -9,11 +9,15 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("progress-bar");
     const projectDetails = 
         document.querySelector(".project-details"); 
+    let  createProject = document.querySelector(".create-project");    
     // Use querySelector to get 
     // the first element with the class
 
     const goalAmount = 1000;
-    let totalRaised = 100;
+    let totalRaised = 0;
+
+    
+
 
     contributeButton.addEventListener("click", function () {
         if (totalRaised >= goalAmount) {
@@ -55,6 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to update the progress bar
     function updateProgressBar() {
         const progress = (totalRaised / goalAmount) * 100;
-        progressBar.style.width = progress + "%";
+        progressBar.value += progress;
     }
 });
